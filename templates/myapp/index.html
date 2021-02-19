@@ -1,0 +1,21 @@
+{% extends "myapp/base.html" %}
+{% block body %}
+<form action="{% url 'result' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter first number" name="num1">
+    <input type="text" placeholder="Enter second number" name="num2">
+
+    <br>
+
+    <input type="radio" id="add" name="operation" value="add">
+    <label for="add">Addition</label><br>
+    <input type="radio" id="sub" name="operation" value="sub">
+    <label for="sub">Subtraction</label><br>
+    <input type="radio" id="mul" name="operation" value="mul">
+    <label for="mul">Multiplication</label>
+
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock body %}
